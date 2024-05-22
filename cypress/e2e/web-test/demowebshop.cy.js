@@ -3,7 +3,7 @@ describe('Test Login Website Luma', () => {
     cy.visit('https://demowebshop.tricentis.com/register')
   })
 
-  it('Failed Register - not filling in the last name', () => {
+  it('Failed Register - Empty Last Name', () => {
     cy.get(':nth-child(2) > .form-fields > :nth-child(1) > :nth-child(2)').click()
     cy.get('#FirstName').type('setia')
     cy.get('#Email').type('setia123@gmail.com')
@@ -39,7 +39,7 @@ describe('Test Login Website Luma', () => {
           cy.get(':nth-child(2) > .form-fields > :nth-child(1) > :nth-child(2)').click()
           cy.get('#FirstName').type('setia')
           cy.get('#LastName').type('anzalna')
-          cy.get('#Email').type('setia1234@gmail.com')
+          cy.get('#Email').type('setia123@gmail.com')
           cy.get('#Password').type('setia123')
           cy.get('#ConfirmPassword').type('setia123')
           cy.get('#register-button').click()

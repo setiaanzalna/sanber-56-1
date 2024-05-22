@@ -12,6 +12,24 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
+Cypress.Commands.add('userlogin', (useremail,userpassw) => {
+    cy.get('#email').type(useremail)
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type(userpassw)
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2 > span').click()
+})
+
+Cypress.Commands.add('ketiklogin', (elemen,value) => {
+    cy.get(elemen)
+    .should('be.visible')
+    .clear()
+    .type(value)
+})
+
+Cypress.Commands.add('loginverify', (elemen,textnya) => {
+    cy.get(elemen)
+    .should('contain.text',textnya)
+
+})
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
